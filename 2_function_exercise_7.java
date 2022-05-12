@@ -1,35 +1,31 @@
 import java.util.*;
 
 class Exercise_Q_7 {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
 
+        int positive = 0, negative = 0, zeros = 0;
+
+        System.out.print("Press 1 to continue & 0 to stop: ");
         Scanner sc = new Scanner(System.in);
+        int inputNum = sc.nextInt();
 
-        System.out.print("Enter starting number: ");
-        int stNum = sc.nextInt();
-
-        System.out.print("Enter ending number: ");
-        int endNum = sc.nextInt();
-
-        int positive = 0, negative = 0, zero = 0;
-
-        for (int i = stNum; i <= endNum; i++) {
-
-            if (i > 0) {
-                System.out.print(i + ", ");
+        while (inputNum == 1) {
+            System.out.print("Enter your number: ");
+            int num = sc.nextInt();
+            if (num > 0) {
                 positive++;
-            }
-            if (i < 0) {
-                System.out.print(i + ", ");
+            } else if (num < 0) {
                 negative++;
+            } else {
+                zeros++;
             }
-            if (i == 0) {
-                System.out.print(i + ", ");
-                zero++;
-            }
+
+            System.out.print("\nPress 1 to continue & 0 to stop: ");
+            inputNum = sc.nextInt();
         }
-        System.out.println("\nPositivecount = " + positive);
-        System.out.println("Negativecount = " + negative);
-        System.out.println("zerocount = " + zero);
+
+        System.out.println("Positives total number: " + positive);
+        System.out.println("Negatives total number: " + negative);
+        System.out.println("Zeros total number: " + zeros);
     }
 }
